@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Optimization;
+using System.Web.UI;
 
 namespace WebFormsNoAuth
 {
@@ -26,6 +27,18 @@ namespace WebFormsNoAuth
                     "~/Scripts/WebForms/MsAjax/MicrosoftAjaxApplicationServices.js",
                     "~/Scripts/WebForms/MsAjax/MicrosoftAjaxTimer.js",
                     "~/Scripts/WebForms/MsAjax/MicrosoftAjaxWebForms.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                "~/Scripts/modernizr-*"));
+
+            ScriptManager.ScriptResourceMapping.AddDefinition(
+                "respond",
+                new ScriptResourceDefinition
+                {
+                    Path = "~/Scripts/respond.min.js",
+                    DebugPath = "~/Scripts/respond.js",
+                });
+
         }
     }
 }
